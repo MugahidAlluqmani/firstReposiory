@@ -4,14 +4,19 @@
 const fastify = require('fastify')({ logger: true })
 
 // Declare a route
-fastify.get('/', async (request, reply) => {
-  return { hello: 'world' }
-})
+    const cars =["camrey","hilux"]; 
+
+    fastify.get('/cars', async (request, reply) => {
+      return cars;
+    })
+
+
 
 // Run the server!
+const port = process.env.$PORT || 4000;
 const start = async () => {
   try {
-    await fastify.listen(process.env.PORT, '0.0.0.0')
+    await fastify.listen(port, '0.0.0.0')
   } catch (err) {
     fastify.log.error(err)
     process.exit(1)
