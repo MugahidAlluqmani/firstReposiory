@@ -16,7 +16,7 @@ const fastify = require('fastify')({ logger: true })
 const port = process.env.$PORT || 4000;
 const start = async () => {
   try {
-    await fastify.listen(port, '0.0.0.0')
+    await fastify.listen(process.env.PORT || 3000, process.env.HOST || '::')
   } catch (err) {
     fastify.log.error(err)
     process.exit(1)
