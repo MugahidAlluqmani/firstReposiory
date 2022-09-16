@@ -4,6 +4,9 @@
 const fastify = require('fastify')({ logger: true })
 
 // Declare a route
+fastify.get('/', async (request, reply) => {
+  return "Hi, type /cars or /resturant";
+})
     const cars =["camrey","hilux"]; 
 
     fastify.get('/cars', async (request, reply) => {
