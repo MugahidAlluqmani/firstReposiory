@@ -12,7 +12,7 @@ fastify.post('/cars', async (request, reply) => {
   return cars;
 })
 
-const host = process.env.NODE_ENV === 'production' ? '0.0.0.0' : '127.0.0.1';
+const host = process.env.NODE_ENV === 'production' ? '0.0.0.0' : '127.1';
 const port = process.env.$PORT || 4000;
 
 // Run the server!
@@ -25,3 +25,4 @@ const start = async () => {
   }
 }
 start();
+// Deploy to heroku
